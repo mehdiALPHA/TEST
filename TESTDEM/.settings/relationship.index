@@ -1,1 +1,12 @@
-[ ]
+[ {
+  "baseItem" : {
+    "id" : "_QlomAJWWEeyXg7ZuTAKeIA",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "DEM:_WdjukJWJEeyNkL0A8skMHg",
+    "version" : "Latest",
+    "type" : "job"
+  } ]
+} ]
