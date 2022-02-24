@@ -1,0 +1,6 @@
+{
+  "reference_projects" : [ {
+    "project" : "PR_POC",
+    "branch" : "master"
+  } ]
+}
