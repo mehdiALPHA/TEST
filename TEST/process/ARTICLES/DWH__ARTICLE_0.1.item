@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:TalendMapper="http://www.talend.org/mapper" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" defaultContext="Default" jobType="Standard" xmi:version="2.0">
   <context confirmationNeeded="false" name="Default"/>
   <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="0"/>
-    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="128"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="224"/>
     <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
     <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
@@ -21,6 +22,7 @@
     <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
     <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
     <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
     <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
     <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
     <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
@@ -41,7 +43,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:Hi8IfLZcvf+Z8W/+R03nXXNCvOgLsPyk92qtY6Sn"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:D3VQFMoe1oRBE1ZemvH5uwVgF/nMAPEDJFnVCmkZ"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
@@ -51,42 +53,40 @@
     <elementParameter field="CHECK" name="DISABLE_ERROR" show="false" value="false"/>
     <elementParameter field="CHECK" name="DISABLE_WARNINGS" show="false" value="false"/>
     <elementParameter field="CHECK" name="DISABLE_INFO" show="false" value="false"/>
-    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="true"/>
-    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" value="false"/>
-    <elementParameter field="CHECK" name="ON_FILES_FLAG" value="false"/>
-    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;D:/TOS/TOS_DI-Win32-20200219_1130-V7.3.1/workspace/.metadata&quot;"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;D:/projects/MARJANE/STUDIO/STUDIO/workspace/.metadata&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
     <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
     <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
     <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" value="true"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
-    <elementParameter field="CLOSED_LIST" name="DB_TYPE" value="tOracleOutput_sid"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_11"/>
-    <elementParameter field="TEXT" name="URL" show="false" value=""/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="tJDBCOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_12"/>
+    <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
     <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
-    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value=""/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;192.168.99.92&quot;"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;15211&quot;"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
     <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;BI&quot;"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:wjdVFqvHtQV9+1S+pCb3JOuWbd5v65FkRCZcWtUfnSCiFUNBRw=="/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:cmMniMxyglTZJRXuKvfublaxq4PtapYqLRKk+7aG"/>
     <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;stats&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;logs&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE_METER" value="&quot;FLOWMETER&quot;"/>
-    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_USER_WARNING" value="true"/>
-    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" value="false"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
     <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
     <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
     <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
@@ -106,8 +106,9 @@
     <routinesParameter id="_U7CaUOunEeqosvUtFHkmiw" name="TalendDate"/>
     <routinesParameter id="_U7P1sOunEeqosvUtFHkmiw" name="TalendStringUtil"/>
     <routinesParameter id="_U7LkQOunEeqosvUtFHkmiw" name="TalendString"/>
+    <routinesParameter id="_uWs9wJclEey-s6_xl3EBaA" name="SQLike"/>
   </parameters>
-  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="192" posY="-64">
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="-96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_nuGVkPHaEeqosvUtFHkmiw"/>
@@ -123,7 +124,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:Ee0C07VPAVATuo5TyJaOFl4V8o4TbrZuX8NZM3mACexeGKyfjOU="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:OO5JKsc4Qhw0uTWaf+nW+YVJ4bLsxO9LJA7qIJdZXDTFJfWoGvs="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -155,25 +156,33 @@
       <column comment="" key="false" length="45" name="ID_RAYON" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="-32">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_1"/>
-    <elementParameter field="CHECK" name="DEFAULT_MAP" value="false"/>
-    <elementParameter field="TABLE" name="MAP">
-      <elementValue elementRef="KEY" value="&quot;ID_RAYON&quot;"/>
-      <elementValue elementRef="VALUE" value="ID_RAYON"/>
+  <node componentName="tLogRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tLogRow_1"/>
+    <elementParameter field="RADIO" name="BASIC_MODE" value="false"/>
+    <elementParameter field="RADIO" name="TABLE_PRINT" value="true"/>
+    <elementParameter field="RADIO" name="VERTICAL" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE" show="false" value="true"/>
+    <elementParameter field="RADIO" name="PRINT_LABEL" show="false" value="false"/>
+    <elementParameter field="RADIO" name="PRINT_UNIQUE_LABEL" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;|&quot;"/>
+    <elementParameter field="CHECK" name="PRINT_HEADER" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_UNIQUE_NAME" show="false" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_COLNAMES" show="false" value="false"/>
+    <elementParameter field="CHECK" name="USE_FIXED_LENGTH" show="false" value="false"/>
+    <elementParameter field="TABLE" name="LENGTHS" show="false">
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID_RAYON"/>
+      <elementValue elementRef="LENGTH" value="10"/>
     </elementParameter>
+    <elementParameter field="CHECK" name="PRINT_CONTENT_WITH_LOG4J" value="true"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" show="false" value="100"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFlowToIterate_1"/>
+    <metadata connector="FLOW" name="tLogRow_1">
+      <column comment="" key="false" length="45" name="ID_RAYON" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
   </node>
-  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="256" posY="64">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
-    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(((String)globalMap.get(&quot;ID_RAYON&quot;)));"/>
-    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tJava_2"/>
-  </node>
-  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="128">
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_nuGVkPHaEeqosvUtFHkmiw"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -188,7 +197,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;ODS&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;ods&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:e+OwtL8d7nKEwkJUnUsGfR9Af2nysYI/UTa/L2iWmAzIns3mvXQ="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:WfsEopoM/qBzeRNs2SAQHBmblclfWuEHu4NOMXoepeRLjPzx3cw="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -349,8 +358,9 @@
       <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="928" posY="128">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="992" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -506,8 +516,9 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="128">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1216" posY="32">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_3"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
@@ -570,7 +581,7 @@
       <column comment="" key="false" length="-1" name="Date_MODIFICATION_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
       <outputTables name="out2" sizeState="INTERMEDIATE">
         <mapperTableEntries expression="out1.ID_DEPARTEMENT_INT " name="ID_DEPARTEMENT_INT" nullable="true" type="id_BigDecimal"/>
@@ -701,8 +712,9 @@
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1376" posY="96">
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1216" posY="-96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_3"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -717,7 +729,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:XJhPU3i/9NRqioAIqtOeDVrn++fFEOFBY84mGpxBBygffDE8Vw=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:eEc7sbMgZc8NED3IB2luHhoZH2xN9xwlDVHid7rCrKgCZ9HKtw=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -836,8 +848,9 @@
       <column comment="" key="false" length="40" name="EAN_PRINCIPALE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tReplicate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="384" posY="288" sizeX="32" sizeY="64">
+  <node componentName="tReplicate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1376" posY="32" sizeX="32" sizeY="64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tReplicate_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tReplicate_1">
       <column comment="" defaultValue="" key="false" length="-1" name="ID_DEPARTEMENT_INT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -889,8 +902,9 @@
       <column comment="" key="false" length="-1" name="Date_MODIFICATION_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="736" posY="448">
+  <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1568" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFilterRow_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
     <elementParameter field="TABLE" name="CONDITIONS">
       <elementValue elementRef="INPUT_COLUMN" value="BOOL"/>
@@ -1051,205 +1065,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="896" posY="448">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_SYiCAAfaEeuZ9NN85WBztg-tMap_2-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out3">
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_INR" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_INV" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXUV" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ean_Principale" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="libelle_Court" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="libelle_Long" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DEPARTEMENT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RAYON" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="sous_famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ss_famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="saisonalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="quartile_prix" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="marque" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="etat_court_Article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_dept" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_rayon" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_Famille" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_SSFam" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_SFam" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_ub" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="PROVENANCE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXR" nullable="true" originalLength="10" pattern="" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="FK_FOURNISSEUR" nullable="true" originalLength="10" pattern="" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Local_Import" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Date_Creation_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
-    </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out3" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row6.ID_ARTICLE_INR" name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ID_ARTICLE_INV " name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="new BigDecimal(row6.ID_ARTICLE_CEXUV) " name="ID_ARTICLE_CEXUV" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.EAN13" name="ean_Principale" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.ARTICLE_COURT " name="libelle_Court" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.ARTICLE_LONG " name="libelle_Long" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.DEPARTEMENT " name="DEPARTEMENT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.RAYON " name="RAYON" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.FAMILLE " name="famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.SFAMILLE " name="sous_famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.SSFAMILLE " name="ss_famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.UNITE_BESOIN " name="ub" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.SAISONNALITE " name="saisonalite" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.ARTICLE_QRTL " name="quartile_prix" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.ARTICLE_MARQ " name="marque" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.ETAT_COURT " name="etat_court_Article" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.ID_DEPARTEMENT_INT " name="id_dept" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ID_RAYON_INT " name="id_rayon" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ID_FAMILLE_INT " name="id_Famille" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ID_SSFAMILLE_INT " name="id_SSFam" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ID_SFAMILLE_INT " name="id_SFam" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ID_UNITE_BESOIN_INT " name="id_ub" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ARTICLE_PROVENANCE " name="PROVENANCE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="new BigDecimal(row6.ID_ARTICLE_CEXR)" name="ID_ARTICLE_CEXR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row11.PK_FOURNISSEUR" name="FK_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ARTICLE_TYPE " name="Local_Import" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row6.Date_Creation_DWH " name="Date_Creation_DWH" nullable="true" type="id_Date"/>
-      </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row6" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="ID_DEPARTEMENT_INT" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_RAYON_INT" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_FAMILLE_INT" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_SSFAMILLE_INT" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_SFAMILLE_INT" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_UNITE_BESOIN_INT" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_GROUPE_PRODUIT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_ARTICLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_ARTICLE_CEXUV" nullable="true" type="id_String"/>
-        <mapperTableEntries name="EAN13" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ARTICLE_COURT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ARTICLE_LONG" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_ETAT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ETAT_COURT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ETAT_LONG" nullable="true" type="id_String"/>
-        <mapperTableEntries name="DT_CREATION" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SAISONNALITE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ARTICLE_PROVENANCE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ARTICLE_DETENTION" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ARTICLE_TYPE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ARTICLE_QRTL" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ARTICLE_MARQ" nullable="true" type="id_String"/>
-        <mapperTableEntries name="CONTENANCE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PA" nullable="true" type="id_String"/>
-        <mapperTableEntries name="PV" nullable="true" type="id_String"/>
-        <mapperTableEntries name="DEBUT_STOCK" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FIN_STOCK" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RUPT_LONG_DUREE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_DEPARTEMENT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_RAYON" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_FAMILLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_SFAMILLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_SSFAMILLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="DEPARTEMENT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RAYON" nullable="true" type="id_String"/>
-        <mapperTableEntries name="FAMILLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SFAMILLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="SSFAMILLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="UNITE_BESOIN" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_UNITE_BESOIN" nullable="true" type="id_String"/>
-        <mapperTableEntries name="BOOL" nullable="true" type="id_Integer"/>
-        <mapperTableEntries name="ID_ARTICLE_CEXR" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Date_Creation_DWH" nullable="true" type="id_Date"/>
-        <mapperTableEntries name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
-      </inputTables>
-      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="ALL_MATCHES" name="row11" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="PK_FOURNISSEUR" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row6.ID_FOURNISSEUR" name="ID_FOURNISSEUR_INT" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="LIBELLE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ETAT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="TYPE" nullable="true" type="id_String"/>
-      </inputTables>
-    </nodeData>
-  </node>
-  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="544">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
-    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
-    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
-    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SID"/>
-    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_11"/>
-    <elementParameter field="TEXT" name="RAC_URL" show="false" value="&quot;192.168.99.92&quot;"/>
-    <elementParameter field="TEXT" name="HOST" value="&quot;192.168.99.92&quot;"/>
-    <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
-    <elementParameter field="TEXT" name="PORT" value="&quot;15211&quot;"/>
-    <elementParameter field="TEXT" name="DBNAME" value="&quot;BI&quot;"/>
-    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
-    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW&quot;"/>
-    <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:92fVStlLrr3eNSZCD6alBpaFcfELfTzKMS70OozRtRNYHuWRAQ=="/>
-    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
-    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
-    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
-    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
-    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
-    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select *from DWH_FOURNISSEUR&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
-    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
-    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
-    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="oracle_id"/>
-    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
-    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
-    <elementParameter field="CHECK" name="IS_CONVERT_XMLTYPE" value="false"/>
-    <elementParameter field="TABLE" name="CONVERT_XMLTYPE" show="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
-    <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
-    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
-    <elementParameter field="TABLE" name="TRIM_COLUMN">
-      <elementValue elementRef="SCHEMA_COLUMN" value="PK_FOURNISSEUR"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_FOURNISSEUR_INT"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ID_FOURNISSEUR"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="LIBELLE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="ETAT"/>
-      <elementValue elementRef="TRIM" value="false"/>
-      <elementValue elementRef="SCHEMA_COLUMN" value="TYPE"/>
-      <elementValue elementRef="TRIM" value="false"/>
-    </elementParameter>
-    <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="Fournisseur"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_5">
-      <column comment="" defaultValue="" key="false" length="10" name="PK_FOURNISSEUR" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="ID_FOURNISSEUR_INT" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="10" name="ID_FOURNISSEUR" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="LIBELLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="ETAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="50" name="TYPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="352">
+  <node componentName="tFilterRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1568" posY="-64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFilterRow_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CLOSED_LIST" name="LOGICAL_OP" value="&amp;&amp;"/>
     <elementParameter field="TABLE" name="CONDITIONS">
       <elementValue elementRef="INPUT_COLUMN" value="BOOL"/>
@@ -1410,12 +1228,13 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="896" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1760" posY="96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="EXTERNAL" name="MAP" value=""/>
     <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
     <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_SYiCAAfaEeuZ9NN85WBztg-tMap_4-PREVIEW.bmp"/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_SYiCAAfaEeuZ9NN85WBztg-tMap_2-PREVIEW.bmp"/>
     <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
     <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
     <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
@@ -1424,11 +1243,11 @@
     <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
     <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="copyOfout3">
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_INR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_INV" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXUV" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ean_Principale" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    <metadata connector="FLOW" name="out3">
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_INR" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_INV" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXUV" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ean_Principale" nullable="true" originalLength="10" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="libelle_Court" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="libelle_Long" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="DEPARTEMENT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
@@ -1441,51 +1260,51 @@
       <column comment="" key="false" length="-1" name="quartile_prix" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="marque" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="etat_court_Article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_dept" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_rayon" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_Famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_SSFam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_SFam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_ub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_dept" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_rayon" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_Famille" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_SSFam" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_SFam" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_ub" nullable="true" originalLength="10" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="PROVENANCE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="FK_FOURNISSEUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXR" nullable="true" originalLength="10" pattern="" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="FK_FOURNISSEUR" nullable="true" originalLength="10" pattern="" precision="0" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" key="false" length="-1" name="Local_Import" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Date_MODIFICATION_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Date_Creation_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="copyOfout3" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="row8.ID_ARTICLE_INR " name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ID_ARTICLE_INV " name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ID_ARTICLE_CEXUV " name="ID_ARTICLE_CEXUV" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.EAN13 " name="ean_Principale" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.ARTICLE_COURT " name="libelle_Court" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.ARTICLE_LONG " name="libelle_Long" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.DEPARTEMENT " name="DEPARTEMENT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.RAYON " name="RAYON" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.FAMILLE " name="famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.SFAMILLE " name="sous_famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.SSFAMILLE " name="ss_famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.UNITE_BESOIN " name="ub" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.SAISONNALITE " name="saisonalite" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.ARTICLE_QRTL " name="quartile_prix" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.ARTICLE_MARQ " name="marque" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.ETAT_COURT " name="etat_court_Article" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.ID_DEPARTEMENT_INT " name="id_dept" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ID_RAYON_INT " name="id_rayon" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ID_FAMILLE_INT " name="id_Famille" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ID_SSFAMILLE_INT " name="id_SSFam" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ID_SFAMILLE_INT " name="id_SFam" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ID_UNITE_BESOIN_INT " name="id_ub" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ARTICLE_PROVENANCE " name="PROVENANCE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="new BigDecimal(row8.ID_ARTICLE_CEXR) " name="ID_ARTICLE_CEXR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row10.PK_FOURNISSEUR " name="FK_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ARTICLE_TYPE " name="Local_Import" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="row8.Date_MODIFICATION_DWH " name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
+      <outputTables name="out3" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row6.ID_ARTICLE_INR" name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ID_ARTICLE_INV " name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="new BigDecimal(row6.ID_ARTICLE_CEXUV) " name="ID_ARTICLE_CEXUV" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.EAN13" name="ean_Principale" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.ARTICLE_COURT " name="libelle_Court" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.ARTICLE_LONG " name="libelle_Long" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.DEPARTEMENT " name="DEPARTEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.RAYON " name="RAYON" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.FAMILLE " name="famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.SFAMILLE " name="sous_famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.SSFAMILLE " name="ss_famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.UNITE_BESOIN " name="ub" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.SAISONNALITE " name="saisonalite" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.ARTICLE_QRTL " name="quartile_prix" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.ARTICLE_MARQ " name="marque" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.ETAT_COURT " name="etat_court_Article" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.ID_DEPARTEMENT_INT " name="id_dept" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ID_RAYON_INT " name="id_rayon" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ID_FAMILLE_INT " name="id_Famille" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ID_SSFAMILLE_INT " name="id_SSFam" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ID_SFAMILLE_INT " name="id_SFam" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ID_UNITE_BESOIN_INT " name="id_ub" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ARTICLE_PROVENANCE " name="PROVENANCE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="new BigDecimal(row6.ID_ARTICLE_CEXR)" name="ID_ARTICLE_CEXR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row11.PK_FOURNISSEUR" name="FK_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ARTICLE_TYPE " name="Local_Import" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row6.Date_Creation_DWH " name="Date_Creation_DWH" nullable="true" type="id_Date"/>
       </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row8" sizeState="INTERMEDIATE">
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row6" sizeState="INTERMEDIATE">
         <mapperTableEntries name="ID_DEPARTEMENT_INT" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="ID_RAYON_INT" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="ID_FAMILLE_INT" nullable="true" type="id_BigDecimal"/>
@@ -1534,18 +1353,19 @@
         <mapperTableEntries name="Date_Creation_DWH" nullable="true" type="id_Date"/>
         <mapperTableEntries name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
       </inputTables>
-      <inputTables activateCondensedTool="true" innerJoin="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row10" sizeState="INTERMEDIATE">
+      <inputTables activateCondensedTool="true" lookupMode="LOAD_ONCE" matchingMode="ALL_MATCHES" name="row11" sizeState="INTERMEDIATE">
         <mapperTableEntries name="PK_FOURNISSEUR" type="id_BigDecimal"/>
-        <mapperTableEntries expression="" name="ID_FOURNISSEUR_INT" type="id_BigDecimal"/>
-        <mapperTableEntries expression="row8.ID_FOURNISSEUR" name="ID_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row6.ID_FOURNISSEUR" name="ID_FOURNISSEUR_INT" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
         <mapperTableEntries name="LIBELLE" nullable="true" type="id_String"/>
         <mapperTableEntries name="ETAT" nullable="true" type="id_String"/>
         <mapperTableEntries name="TYPE" nullable="true" type="id_String"/>
       </inputTables>
     </nodeData>
   </node>
-  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="896" posY="256">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1760" posY="288">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_5"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -1560,7 +1380,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:KKQ5A9KnLXeahMc8/6JyV2g67JQ+iK3PHWfRjb1cj95OLqr69g=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:nOfFgfbBqOs1sJwnLauXUa13voEkpnbAUO4FP/CAfZ6L7EwS7A=="/>
     <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
@@ -1598,7 +1418,7 @@
     <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
     <elementParameter field="TEXT" name="LABEL" value="Fournisseur"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDBInput_4">
+    <metadata connector="FLOW" name="tDBInput_5">
       <column comment="" defaultValue="" key="false" length="10" name="PK_FOURNISSEUR" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="ID_FOURNISSEUR_INT" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
       <column comment="" defaultValue="" key="false" length="10" name="ID_FOURNISSEUR" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
@@ -1607,124 +1427,9 @@
       <column comment="" key="false" length="50" name="TYPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1024" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_5"/>
-    <elementParameter field="EXTERNAL" name="MAP" value=""/>
-    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
-    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
-    <elementParameter field="IMAGE" name="PREVIEW" value="_SYiCAAfaEeuZ9NN85WBztg-tMap_5-PREVIEW.bmp"/>
-    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
-    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
-    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
-    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
-    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
-    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="out5">
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_INR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_INV" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXUV" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ean_Principale" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="libelle_Court" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="libelle_Long" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="DEPARTEMENT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="RAYON" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="sous_famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ss_famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="saisonalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="quartile_prix" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="marque" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="etat_court_Article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_dept" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_rayon" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_Famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_SSFam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_SFam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" defaultValue="" key="false" length="-1" name="id_ub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="PROVENANCE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="FK_FOURNISSEUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Local_Import" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="Date_MODIFICATION_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
-    </metadata>
-    <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties/>
-      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
-      <outputTables name="out5" sizeState="INTERMEDIATE">
-        <mapperTableEntries expression="copyOfout3.ID_ARTICLE_INR " name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.ID_ARTICLE_INV " name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="new BigDecimal(copyOfout3.ID_ARTICLE_CEXUV) " name="ID_ARTICLE_CEXUV" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.ean_Principale " name="ean_Principale" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.libelle_Court " name="libelle_Court" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.libelle_Long " name="libelle_Long" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.DEPARTEMENT " name="DEPARTEMENT" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.RAYON " name="RAYON" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.famille " name="famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.sous_famille " name="sous_famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.ss_famille " name="ss_famille" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.ub " name="ub" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.saisonalite " name="saisonalite" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.quartile_prix " name="quartile_prix" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.marque " name="marque" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.etat_court_Article " name="etat_court_Article" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.id_dept " name="id_dept" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.id_rayon " name="id_rayon" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.id_Famille " name="id_Famille" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.id_SSFam " name="id_SSFam" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.id_SFam " name="id_SFam" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.id_ub " name="id_ub" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.PROVENANCE " name="PROVENANCE" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.ID_ARTICLE_CEXR " name="ID_ARTICLE_CEXR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.FK_FOURNISSEUR " name="FK_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries expression="copyOfout3.Local_Import " name="Local_Import" nullable="true" type="id_String"/>
-        <mapperTableEntries expression="copyOfout3.Date_MODIFICATION_DWH " name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
-      </outputTables>
-      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="copyOfout3" sizeState="INTERMEDIATE">
-        <mapperTableEntries name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="ID_ARTICLE_CEXUV" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ean_Principale" nullable="true" type="id_String"/>
-        <mapperTableEntries name="libelle_Court" nullable="true" type="id_String"/>
-        <mapperTableEntries name="libelle_Long" nullable="true" type="id_String"/>
-        <mapperTableEntries name="DEPARTEMENT" nullable="true" type="id_String"/>
-        <mapperTableEntries name="RAYON" nullable="true" type="id_String"/>
-        <mapperTableEntries name="famille" nullable="true" type="id_String"/>
-        <mapperTableEntries name="sous_famille" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ss_famille" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ub" nullable="true" type="id_String"/>
-        <mapperTableEntries name="saisonalite" nullable="true" type="id_String"/>
-        <mapperTableEntries name="quartile_prix" nullable="true" type="id_String"/>
-        <mapperTableEntries name="marque" nullable="true" type="id_String"/>
-        <mapperTableEntries name="etat_court_Article" nullable="true" type="id_String"/>
-        <mapperTableEntries name="id_dept" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="id_rayon" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="id_Famille" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="id_SSFam" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="id_SFam" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="id_ub" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="PROVENANCE" nullable="true" type="id_String"/>
-        <mapperTableEntries name="ID_ARTICLE_CEXR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="FK_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
-        <mapperTableEntries name="Local_Import" nullable="true" type="id_String"/>
-        <mapperTableEntries name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
-      </inputTables>
-    </nodeData>
-  </node>
-  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1184" posY="352">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_2"/>
-    <elementParameter field="CHECK" name="DEFAULT_MAP" value="true"/>
-    <elementParameter field="TABLE" name="MAP" show="false">
-      <elementValue elementRef="KEY" value="&quot;newLine&quot;"/>
-      <elementValue elementRef="VALUE" value="ID_ARTICLE_INR"/>
-    </elementParameter>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFlowToIterate_2"/>
-  </node>
-  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1088" posY="448">
+  <node componentName="tOracleOutput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1920" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBOutput_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -1739,7 +1444,7 @@
     <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
     <elementParameter field="TEXT" name="TABLESCHEMA" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:aahHbjnUV7Kcf5Bd9QT4WVVyaInC9pplI8DY6oVeexZgviTW8w=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:msLcNc+7fSVpVZNh04skavN0kgquDw4KxHEiTLuQKZNNnYkOnA=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;dwh_article&quot;"/>
     <elementParameter field="CLOSED_LIST" name="TABLE_ACTION" value="NONE"/>
     <elementParameter field="LABEL" name="NOTE" show="false" value="Warning : this component configuration will automatically generate a commit before data insert/update/delete"/>
@@ -1899,6 +1604,7 @@
     <elementParameter field="CHECK" name="USE_HINT_OPTIONS" value="false"/>
     <elementParameter field="TABLE" name="HINT_OPTIONS" show="false"/>
     <elementParameter field="CHECK" name="CONVERT_COLUMN_TABLE_TO_UPPERCASE" value="false"/>
+    <elementParameter field="CHECK" name="CONTAIN_BLOB_FROM_OTHER_DB" value="false"/>
     <elementParameter field="CHECK" name="ENABLE_DEBUG_MODE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_SIZE" value="false"/>
     <elementParameter field="CHECK" name="USE_BATCH_AND_USE_CONN" show="false" value="false"/>
@@ -1969,8 +1675,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="-7" offsetLabelY="-1" posX="1280" posY="448">
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="-7" offsetLabelY="-1" posX="2048" posY="192">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFileOutputDelimited_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="USESTREAM" value="false"/>
     <elementParameter field="TEXT" name="STREAMNAME" show="false" value="outputStream"/>
     <elementParameter field="FILE" name="FILENAME" value="&quot;D:/DWH/REJETS/reject_oracle_update_article_DWH.csv&quot;"/>
@@ -2032,8 +1739,9 @@
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="1152" posY="544">
+  <node componentName="tFlowMeter" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="2144" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowMeter_16"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
     <elementParameter field="CHECK" name="USEROWLABEL" value="true"/>
     <elementParameter field="TEXT" name="METTERLABEL" show="false" value="&quot;MyLabel&quot;"/>
@@ -2071,8 +1779,326 @@
       <column comment="" key="false" length="-1" name="Date_Creation_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="DATE" type="id_Date" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="160" posY="128">
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1728" posY="-64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_4"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_SYiCAAfaEeuZ9NN85WBztg-tMap_4-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="copyOfout3">
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_INR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_INV" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXUV" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ean_Principale" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="libelle_Court" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="libelle_Long" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DEPARTEMENT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RAYON" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="sous_famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ss_famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="saisonalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="quartile_prix" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="marque" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="etat_court_Article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_dept" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_rayon" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_Famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_SSFam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_SFam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_ub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PROVENANCE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="FK_FOURNISSEUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Local_Import" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Date_MODIFICATION_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="copyOfout3" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="row8.ID_ARTICLE_INR " name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ID_ARTICLE_INV " name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ID_ARTICLE_CEXUV " name="ID_ARTICLE_CEXUV" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.EAN13 " name="ean_Principale" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.ARTICLE_COURT " name="libelle_Court" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.ARTICLE_LONG " name="libelle_Long" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.DEPARTEMENT " name="DEPARTEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.RAYON " name="RAYON" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.FAMILLE " name="famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.SFAMILLE " name="sous_famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.SSFAMILLE " name="ss_famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.UNITE_BESOIN " name="ub" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.SAISONNALITE " name="saisonalite" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.ARTICLE_QRTL " name="quartile_prix" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.ARTICLE_MARQ " name="marque" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.ETAT_COURT " name="etat_court_Article" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.ID_DEPARTEMENT_INT " name="id_dept" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ID_RAYON_INT " name="id_rayon" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ID_FAMILLE_INT " name="id_Famille" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ID_SSFAMILLE_INT " name="id_SSFam" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ID_SFAMILLE_INT " name="id_SFam" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ID_UNITE_BESOIN_INT " name="id_ub" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ARTICLE_PROVENANCE " name="PROVENANCE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="new BigDecimal(row8.ID_ARTICLE_CEXR) " name="ID_ARTICLE_CEXR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row10.PK_FOURNISSEUR " name="FK_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ARTICLE_TYPE " name="Local_Import" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="row8.Date_MODIFICATION_DWH " name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row8" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="ID_DEPARTEMENT_INT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_RAYON_INT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_FAMILLE_INT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_SSFAMILLE_INT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_SFAMILLE_INT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_UNITE_BESOIN_INT" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_GROUPE_PRODUIT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_ARTICLE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_ARTICLE_CEXUV" nullable="true" type="id_String"/>
+        <mapperTableEntries name="EAN13" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ARTICLE_COURT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ARTICLE_LONG" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_ETAT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ETAT_COURT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ETAT_LONG" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DT_CREATION" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SAISONNALITE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ARTICLE_PROVENANCE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ARTICLE_DETENTION" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ARTICLE_TYPE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ARTICLE_QRTL" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ARTICLE_MARQ" nullable="true" type="id_String"/>
+        <mapperTableEntries name="CONTENANCE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PA" nullable="true" type="id_String"/>
+        <mapperTableEntries name="PV" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DEBUT_STOCK" nullable="true" type="id_String"/>
+        <mapperTableEntries name="FIN_STOCK" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RUPT_LONG_DUREE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_DEPARTEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_RAYON" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_FAMILLE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_SFAMILLE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_SSFAMILLE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DEPARTEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RAYON" nullable="true" type="id_String"/>
+        <mapperTableEntries name="FAMILLE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SFAMILLE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="SSFAMILLE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="UNITE_BESOIN" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_UNITE_BESOIN" nullable="true" type="id_String"/>
+        <mapperTableEntries name="BOOL" nullable="true" type="id_Integer"/>
+        <mapperTableEntries name="ID_ARTICLE_CEXR" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Date_Creation_DWH" nullable="true" type="id_Date"/>
+        <mapperTableEntries name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
+      </inputTables>
+      <inputTables activateCondensedTool="true" innerJoin="true" lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="row10" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="PK_FOURNISSEUR" type="id_BigDecimal"/>
+        <mapperTableEntries expression="" name="ID_FOURNISSEUR_INT" type="id_BigDecimal"/>
+        <mapperTableEntries expression="row8.ID_FOURNISSEUR" name="ID_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="LIBELLE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ETAT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="TYPE" nullable="true" type="id_String"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tOracleInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1728" posY="-160">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_4"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
+    <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="CONNECTION" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="CONNECTION_TYPE" value="ORACLE_SID"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" value="ORACLE_11"/>
+    <elementParameter field="TEXT" name="RAC_URL" show="false" value="&quot;192.168.99.92&quot;"/>
+    <elementParameter field="TEXT" name="HOST" value="&quot;192.168.99.92&quot;"/>
+    <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
+    <elementParameter field="TEXT" name="PORT" value="&quot;15211&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" value="&quot;BI&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;BI&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW&quot;"/>
+    <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:WTP2bfAhYAZwsaQQitmkCfqZ5CSKK4eWSsReztUH/uuWJUB6jw=="/>
+    <elementParameter field="TEXT" name="JDBC_URL" show="false" value="&quot;jdbc:oracle:oci:/@talend&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
+    <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="QUERYSTORE:QUERYSTORE_TYPE" value="BUILT_IN"/>
+    <elementParameter field="GUESS_SCHEMA" name="GUESS_SCHEMA" value="&quot;&quot;"/>
+    <elementParameter field="MEMO_SQL" name="QUERY" value="&quot;select *from DWH_FOURNISSEUR&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="This option only applies when deploying and running in the Talend Runtime"/>
+    <elementParameter field="CHECK" name="SPECIFY_DATASOURCE_ALIAS" value="false"/>
+    <elementParameter field="TEXT" name="DATASOURCE_ALIAS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="MAPPING_TYPE" name="MAPPING" show="false" value="oracle_id"/>
+    <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;"/>
+    <elementParameter field="LABEL" name="NOTE" value="*Note: Example for Additional JDBC Parameters: &quot;parameterName1=value1&amp;&amp;parameterName2=value2&quot;"/>
+    <elementParameter field="CHECK" name="IS_CONVERT_XMLTYPE" value="false"/>
+    <elementParameter field="TABLE" name="CONVERT_XMLTYPE" show="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="USE_CURSOR" value="false"/>
+    <elementParameter field="TEXT" name="CURSOR_SIZE" show="false" value="1000"/>
+    <elementParameter field="CHECK" name="TRIM_ALL_COLUMN" value="false"/>
+    <elementParameter field="TABLE" name="TRIM_COLUMN">
+      <elementValue elementRef="SCHEMA_COLUMN" value="PK_FOURNISSEUR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID_FOURNISSEUR_INT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ID_FOURNISSEUR"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="LIBELLE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="ETAT"/>
+      <elementValue elementRef="TRIM" value="false"/>
+      <elementValue elementRef="SCHEMA_COLUMN" value="TYPE"/>
+      <elementValue elementRef="TRIM" value="false"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="NO_NULL_VALUES" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="Fournisseur"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDBInput_4">
+      <column comment="" defaultValue="" key="false" length="10" name="PK_FOURNISSEUR" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="ID_FOURNISSEUR_INT" nullable="false" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="10" name="ID_FOURNISSEUR" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="LIBELLE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="ETAT" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="50" name="TYPE" nullable="true" originalLength="-1" pattern="" precision="0" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tMap" componentVersion="2.1" offsetLabelX="0" offsetLabelY="0" posX="1856" posY="-64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tMap_5"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="EXTERNAL" name="MAP" value=""/>
+    <elementParameter field="CLOSED_LIST" name="LINK_STYLE" value="AUTO"/>
+    <elementParameter field="DIRECTORY" name="TEMPORARY_DATA_DIRECTORY" value=""/>
+    <elementParameter field="IMAGE" name="PREVIEW" value="_SYiCAAfaEeuZ9NN85WBztg-tMap_5-PREVIEW.bmp"/>
+    <elementParameter field="CHECK" name="DIE_ON_ERROR" show="false" value="true"/>
+    <elementParameter field="CHECK" name="LKUP_PARALLELIZE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LEVENSHTEIN" show="false" value="0"/>
+    <elementParameter field="TEXT" name="JACCARD" show="false" value="0"/>
+    <elementParameter field="CHECK" name="ENABLE_AUTO_CONVERT_TYPE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="ROWS_BUFFER_SIZE" value="2000000"/>
+    <elementParameter field="CHECK" name="CHANGE_HASH_AND_EQUALS_FOR_BIGDECIMAL" value="true"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="out5">
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_INR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_INV" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXUV" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ean_Principale" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="libelle_Court" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="libelle_Long" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="DEPARTEMENT" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="RAYON" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="sous_famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ss_famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="saisonalite" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="quartile_prix" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="marque" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="etat_court_Article" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_dept" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_rayon" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_Famille" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_SSFam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_SFam" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" defaultValue="" key="false" length="-1" name="id_ub" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="NUMBER" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="PROVENANCE" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="ID_ARTICLE_CEXR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="FK_FOURNISSEUR" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_BigDecimal" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Local_Import" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="VARCHAR2" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="Date_MODIFICATION_DWH" nullable="true" originalLength="-1" pattern="&quot;dd-MM-yyyy&quot;" precision="-1" sourceType="" type="id_Date" usefulColumn="true"/>
+    </metadata>
+    <nodeData xsi:type="TalendMapper:MapperData">
+      <uiProperties/>
+      <varTables minimized="true" name="Var" sizeState="INTERMEDIATE"/>
+      <outputTables name="out5" sizeState="INTERMEDIATE">
+        <mapperTableEntries expression="copyOfout3.ID_ARTICLE_INR " name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.ID_ARTICLE_INV " name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="new BigDecimal(copyOfout3.ID_ARTICLE_CEXUV) " name="ID_ARTICLE_CEXUV" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.ean_Principale " name="ean_Principale" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.libelle_Court " name="libelle_Court" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.libelle_Long " name="libelle_Long" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.DEPARTEMENT " name="DEPARTEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.RAYON " name="RAYON" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.famille " name="famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.sous_famille " name="sous_famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.ss_famille " name="ss_famille" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.ub " name="ub" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.saisonalite " name="saisonalite" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.quartile_prix " name="quartile_prix" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.marque " name="marque" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.etat_court_Article " name="etat_court_Article" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.id_dept " name="id_dept" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.id_rayon " name="id_rayon" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.id_Famille " name="id_Famille" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.id_SSFam " name="id_SSFam" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.id_SFam " name="id_SFam" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.id_ub " name="id_ub" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.PROVENANCE " name="PROVENANCE" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.ID_ARTICLE_CEXR " name="ID_ARTICLE_CEXR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.FK_FOURNISSEUR " name="FK_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries expression="copyOfout3.Local_Import " name="Local_Import" nullable="true" type="id_String"/>
+        <mapperTableEntries expression="copyOfout3.Date_MODIFICATION_DWH " name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
+      </outputTables>
+      <inputTables lookupMode="LOAD_ONCE" matchingMode="UNIQUE_MATCH" name="copyOfout3" sizeState="INTERMEDIATE">
+        <mapperTableEntries name="ID_ARTICLE_INR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_ARTICLE_INV" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="ID_ARTICLE_CEXUV" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ean_Principale" nullable="true" type="id_String"/>
+        <mapperTableEntries name="libelle_Court" nullable="true" type="id_String"/>
+        <mapperTableEntries name="libelle_Long" nullable="true" type="id_String"/>
+        <mapperTableEntries name="DEPARTEMENT" nullable="true" type="id_String"/>
+        <mapperTableEntries name="RAYON" nullable="true" type="id_String"/>
+        <mapperTableEntries name="famille" nullable="true" type="id_String"/>
+        <mapperTableEntries name="sous_famille" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ss_famille" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ub" nullable="true" type="id_String"/>
+        <mapperTableEntries name="saisonalite" nullable="true" type="id_String"/>
+        <mapperTableEntries name="quartile_prix" nullable="true" type="id_String"/>
+        <mapperTableEntries name="marque" nullable="true" type="id_String"/>
+        <mapperTableEntries name="etat_court_Article" nullable="true" type="id_String"/>
+        <mapperTableEntries name="id_dept" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="id_rayon" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="id_Famille" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="id_SSFam" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="id_SFam" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="id_ub" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="PROVENANCE" nullable="true" type="id_String"/>
+        <mapperTableEntries name="ID_ARTICLE_CEXR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="FK_FOURNISSEUR" nullable="true" type="id_BigDecimal"/>
+        <mapperTableEntries name="Local_Import" nullable="true" type="id_String"/>
+        <mapperTableEntries name="Date_MODIFICATION_DWH" nullable="true" type="id_Date"/>
+      </inputTables>
+    </nodeData>
+  </node>
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="2016" posY="-64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CHECK" name="DEFAULT_MAP" value="true"/>
+    <elementParameter field="TABLE" name="MAP" show="false">
+      <elementValue elementRef="KEY" value="&quot;newLine&quot;"/>
+      <elementValue elementRef="VALUE" value="ID_ARTICLE_INR"/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFlowToIterate_2"/>
+  </node>
+  <node componentName="tSetGlobalVar" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="704" posY="-96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tSetGlobalVar_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TABLE" name="VARIABLES">
       <elementValue elementRef="KEY" value="&quot;currentidrayon&quot;"/>
       <elementValue elementRef="VALUE" value="globalMap.get(&quot;ID_RAYON&quot;)"/>
@@ -2080,8 +2106,19 @@
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
     <metadata connector="FLOW" name="tSetGlobalVar_1"/>
   </node>
-  <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="1312" posY="352">
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
+    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Probleme de connexion a la base BI&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="4"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDie_1"/>
+  </node>
+  <node componentName="tOracleRow" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="2176" posY="-64">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
     <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" show="false" value="_1y8HQAitEeu-aZJbmylHcw"/>
     <elementParameter field="CHECK" name="USE_EXISTING_CONNECTION" value="false"/>
@@ -2096,7 +2133,7 @@
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;DW&quot;"/>
     <elementParameter field="TEXT" name="TYPE" show="false" value="ORACLE_SID"/>
     <elementParameter field="TEXT" name="USER" value="&quot;dw&quot;"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:kWJpn6stdt4ehUMNCkTmDMslTCRI4BTc3B+XkMjLlKFpcwreLw=="/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:ik+PVkj79rdCu3R+p6j8LHqoXAelgSNPelTA7iqkS+ewMMS2oQ=="/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" show="false" value=""/>
@@ -2125,33 +2162,35 @@
       <column key="false" length="255" name="errorMessage" nullable="true" originalLength="-1" precision="0" sourceType="" type="id_String" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="640" posY="-64">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
-    <elementParameter field="CHECK" name="TSTATCATCHER_STATS" value="true"/>
-    <elementParameter field="TEXT" name="MESSAGE" value="&quot;Probleme de connexion a la base BI&quot;"/>
-    <elementParameter field="TEXT" name="CODE" value="4"/>
-    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
-    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+  <node componentName="tFlowToIterate" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="352" posY="-96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_1"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="CHECK" name="DEFAULT_MAP" value="false"/>
+    <elementParameter field="TABLE" name="MAP">
+      <elementValue elementRef="KEY" value="&quot;ID_RAYON&quot;"/>
+      <elementValue elementRef="VALUE" value="ID_RAYON"/>
+    </elementParameter>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tDie_1"/>
+    <metadata connector="FLOW" name="tFlowToIterate_1"/>
   </node>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tFlowToIterate_1">
+  <node componentName="tJava" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="-96">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJava_2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" value="false"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="System.out.println(((String)globalMap.get(&quot;ID_RAYON&quot;)));"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJava_2"/>
+  </node>
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tLogRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row1"/>
   </connection>
   <connection connectorName="COMPONENT_ERROR" label="OnComponentError" lineStyle="5" metaname="tDBInput_1" offsetLabelX="0" offsetLabelY="0" source="tDBInput_1" target="tDie_1">
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentError1"/>
   </connection>
-  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFlowToIterate_1" offsetLabelX="0" offsetLabelY="0" source="tFlowToIterate_1" target="tJava_2">
-    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
-    <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate1"/>
-  </connection>
-  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_2" offsetLabelX="0" offsetLabelY="0" source="tJava_2" target="tSetGlobalVar_1">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
-  </connection>
   <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tDBInput_2" offsetLabelX="0" offsetLabelY="0" source="tDBInput_2" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
   </connection>
   <connection connectorName="FLOW" label="out1" lineStyle="0" metaname="out1" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_3">
@@ -2161,6 +2200,7 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out1"/>
   </connection>
   <connection connectorName="FLOW" label="out2" lineStyle="0" metaname="out2" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tReplicate_1">
@@ -2176,23 +2216,33 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out2"/>
   </connection>
   <connection connectorName="FLOW" label="row3" lineStyle="8" metaname="tDBInput_3" offsetLabelX="0" offsetLabelY="0" source="tDBInput_3" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row3"/>
   </connection>
   <connection connectorName="FLOW" label="row5" lineStyle="0" metaname="tReplicate_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tReplicate_1" target="tFilterRow_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row5"/>
   </connection>
   <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tReplicate_1" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tReplicate_1" target="tFilterRow_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
   </connection>
   <connection connectorName="FILTER" label="row6" lineStyle="0" metaname="FILTER" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_2" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row6"/>
+  </connection>
+  <connection connectorName="FILTER" label="row8" lineStyle="0" metaname="FILTER" offsetLabelX="-50" offsetLabelY="47" source="tFilterRow_1" target="tMap_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
   </connection>
   <connection connectorName="FLOW" label="out3" lineStyle="0" metaname="out3" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tDBOutput_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -2210,15 +2260,23 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out3"/>
   </connection>
   <connection connectorName="FLOW" label="row11" lineStyle="8" metaname="tDBInput_5" offsetLabelX="0" offsetLabelY="0" source="tDBInput_5" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row11"/>
   </connection>
-  <connection connectorName="FILTER" label="row8" lineStyle="0" metaname="FILTER" offsetLabelX="0" offsetLabelY="0" source="tFilterRow_1" target="tMap_4">
+  <connection connectorName="FLOW" label="row9" lineStyle="0" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tDBOutput_1" target="tFlowMeter_16">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row8"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row9"/>
+  </connection>
+  <connection connectorName="REJECT" label="row7" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tDBOutput_1" target="tFileOutputDelimited_1">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row7"/>
   </connection>
   <connection connectorName="FLOW" label="copyOfout3" lineStyle="0" metaname="copyOfout3" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tMap_5">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -2227,10 +2285,12 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="copyOfout3"/>
   </connection>
   <connection connectorName="FLOW" label="row10" lineStyle="8" metaname="tDBInput_4" offsetLabelX="0" offsetLabelY="0" source="tDBInput_4" target="tMap_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row10"/>
   </connection>
   <connection connectorName="FLOW" label="out5" lineStyle="0" metaname="out5" offsetLabelX="0" offsetLabelY="0" source="tMap_5" target="tFlowToIterate_2">
@@ -2240,24 +2300,28 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="out5"/>
   </connection>
   <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tFlowToIterate_2" offsetLabelX="0" offsetLabelY="0" source="tFlowToIterate_2" target="tDBRow_1">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk2"/>
   </connection>
-  <connection connectorName="FLOW" label="row9" lineStyle="0" metaname="tDBOutput_1" offsetLabelX="0" offsetLabelY="0" outputId="1" source="tDBOutput_1" target="tFlowMeter_16">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row9"/>
-  </connection>
-  <connection connectorName="REJECT" label="row7" lineStyle="0" metaname="REJECT" offsetLabelX="0" offsetLabelY="0" outputId="2" source="tDBOutput_1" target="tFileOutputDelimited_1">
-    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row7"/>
-  </connection>
   <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tSetGlobalVar_1" offsetLabelX="0" offsetLabelY="0" source="tSetGlobalVar_1" target="tDBInput_2">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk1"/>
   </connection>
+  <connection connectorName="ITERATE" label="Iterate" lineStyle="7" metaname="tFlowToIterate_1" offsetLabelX="0" offsetLabelY="0" source="tFlowToIterate_1" target="tJava_2">
+    <elementParameter field="CHECK" name="ENABLE_PARALLEL" value="false"/>
+    <elementParameter field="TEXT" name="NUMBER_PARALLEL" show="false" value="2"/>
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="iterate1"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tJava_2" offsetLabelX="0" offsetLabelY="0" source="tJava_2" target="tSetGlobalVar_1">
+    <elementParameter field="CHECK" name="ACTIVATE" show="false" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk3"/>
+  </connection>
   <subjob>
-    <elementParameter field="CHECK" name="COLLAPSED" show="false" value="true"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBInput_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
@@ -2273,22 +2337,28 @@
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
   <subjob>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
-    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
-    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
-  </subjob>
-  <subjob>
     <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
     <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
     <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
   </subjob>
-<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_51bdba4b-0465-4598-8d7c-1a3e2831f62c"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>CeAI/cpPRF0PXldwmc/QmzfVkUuvbcKhEkK6ecNmjT6mmXn0HqmBVyTUZ8Th1s3uTxbkQzzC7bT5&#13;
-nWU2Use4IQ==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_9e26ee45-1ed0-41fd-b600-901d390431f6"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>4fjhSEVTebUCKqTOr4y6Mkhs/0La3M6MBbNCD+IQH4MW804cYHfRDX8OzRcWcfOXpQT7kPLZCSR4&#13;
-bC32t0EDFw==</DigestValue></Reference></SignedInfo><SignatureValue>IFyID8XJZR9bS5Nr8wR2wwPy/1/UQQPF05PCzGmyCW45SzATsDiFn2SDlA88P0z++lU4FDgMsFjp&#13;
-NQu20WIdtDTBWiVkyYhqze7GXa1rV9lBoQOuyH0JJ+SmqOrSuCWR2k3P8GxL9RT3nY5R5Dn/Osn3&#13;
-jTARydv8IyAXGTQ00F44S4CRnmB4oULGVGFSsM5KXNMydFQYNZcO8/PWADHZK8mM3FAH9tlRIXTS&#13;
-e8d6rPAzKXd88Q7tFWZKqZk4sIwAc1Vy5r4582PQuvsqiJ8hGooBmhnjTAGb/e2jYzRuyxIhEkPD&#13;
-b+zw720GXY/buoYZge/BziH4Fkl+8quJ7E50Rw==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDBRow_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+    <elementParameter field="CHECK" name="SUBJOB_DISPLAYED" show="false" value="false"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tFlowToIterate_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_b1e2a374-10c3-459b-8d9b-4a9276078f54"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>Igvk19S3G4tlkRtHyiBIgznaWj5TLQg/RPoTFgNkRqN36Sqz0VW7YaYTZKATuLtkDad4QAXKLimC&#13;
+J6T0QW+Aug==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_515e228a-f65a-4a03-88e6-585d3d0a7307"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>ZT7awf0zkcu/mZoeX8OAYEo/HDoaxGgLEzHdjBSOwo0wrxQKLX907hlxk5jImYoPfsL2I12blZri&#13;
+KJjlDKagag==</DigestValue></Reference></SignedInfo><SignatureValue>ECviL92xWNpqNEz0aR5xx8ALYv9s867uiH1Hj2hQMvBHKeqZZN8ZTA9/SWpy0TbpW0OSIdyvzG3W&#13;
+vEy1Kfpzk4jyfjsToZnoFc/f9lI10Atz9534rq2TPkKvb5KS0gyjkccKbBpHGmeZgswJ0N3jXgL9&#13;
+0WZRnTSib6G0XUtImsYcSJbWS8GAz6MahEddZcH9Vf3enYS0fBWTtRtbu6z9MsaUAxaMpR8vlh4n&#13;
+F0MmLoRKMMviTgTmgRnl7VMg2PMSLmqnjGtNKrsMewxMQq7LdxwSHn2F+eorajZTDrShLl1Hty64&#13;
+zhT9cdFea3xZ5SkSb3FSHWVZBoLGv5rUylfjNA==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
 DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
 VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
 QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
@@ -2310,4 +2380,4 @@ hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13
 WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
 gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
 qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
-qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_9e26ee45-1ed0-41fd-b600-901d390431f6" Target="#_51bdba4b-0465-4598-8d7c-1a3e2831f62c"><Timestamp>2022-03-05 01:08:56</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_515e228a-f65a-4a03-88e6-585d3d0a7307" Target="#_b1e2a374-10c3-459b-8d9b-4a9276078f54"><Timestamp>2022-03-05 01:15:46</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>
