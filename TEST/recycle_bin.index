@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recyclebin:RecycleBin xmlns:recyclebin="http://www.talend.org/recyclebin">
+  <deletedItems id="_TEd-UFteEeyWMfp5t8FMJw" path="" type="PROCESS"/>
+  <deletedItems id="_ihtEcFNzEey35NlGGlfGFQ" path="" type="PROCESS"/>
+  <deletedItems id="_QWrvcDAxEeumSqPmK0vZPA" path="DM" type="PROCESS"/>
+  <deletedItems id="_aNOjUDyqEey9j7swOT_3bQ" path="DM" type="PROCESS"/>
+  <deletedItems id="_kk2nUB25EeudNrOBCbpSBA" path="DM" type="PROCESS"/>
+  <deletedItems id="_87ImodsfEeuM5JtU6nZsxg" path="DWH" type="PROCESS"/>
+  <deletedItems id="_dx6t4KVTEeuEzaqLopeZPQ" path="DWH" type="PROCESS"/>
+  <deletedItems id="_kvs3MINYEeuM6Z_UvaWyAg" path="DWH" type="PROCESS"/>
+  <deletedItems id="_pH2EcA7eEeuA15oDRQ3wjA" path="DWH" type="PROCESS"/>
+  <deletedItems id="_JZIpMPczEeq2kbHZbBWRfQ" path="III_Load_Oracle_Tables" type="PROCESS"/>
+  <deletedItems id="_lMfM4A8EEeuA15oDRQ3wjA" path="III_Load_Oracle_Tables" type="PROCESS"/>
+  <deletedItems id="_6lW_EA4sEeuA15oDRQ3wjA" path="III_Load_Oracle_Tables/LOAD_ODS_MAP_TABLES" type="PROCESS"/>
+  <deletedItems id="_9Q6VcA4jEeuA15oDRQ3wjA" path="III_Load_Oracle_Tables/LOAD_ODS_MAP_TABLES" type="PROCESS"/>
+  <deletedItems id="_YPLfgA1wEeuA15oDRQ3wjA" path="III_Load_Oracle_Tables/LOAD_ODS_MAP_TABLES" type="PROCESS"/>
+  <deletedItems id="_brQb0BUmEeu16KnHLjYG6A" path="III_Load_Oracle_Tables/LOAD_ODS_MAP_TABLES" type="PROCESS"/>
+  <deletedItems id="_mOA9MA4FEeuA15oDRQ3wjA" path="III_Load_Oracle_Tables/LOAD_ODS_MAP_TABLES" type="PROCESS"/>
+  <deletedItems id="_xneHwA4QEeuA15oDRQ3wjA" path="III_Load_Oracle_Tables/LOAD_ODS_MAP_TABLES" type="PROCESS"/>
+  <deletedItems id="_OKcSUFQhEeyi36hwzvHq8g" path="JOB_TICKETS" type="PROCESS"/>
+  <deletedItems id="_2gf7ACWwEeuC2fO_7qdjVQ" path="ODS" type="PROCESS"/>
+  <deletedItems id="_aYxkYF8hEeuAH4q5pauU7g" path="ODS" type="PROCESS"/>
+  <deletedItems id="_87Imo9sfEeuM5JtU6nZsxg" path="ODS/LOAD_ODS_MAP_TABLES" type="PROCESS"/>
+  <deletedItems id="_D5Z_wCtCEeyf2bpibKab3w" path="REPORTING_NOTIF" type="PROCESS"/>
+  <deletedItems id="_JPjiQJt9EeuM6Z_UvaWyAg" path="Site_KO" type="PROCESS"/>
+</recyclebin:RecycleBin>
